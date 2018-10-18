@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Spond Screenshots
+  </h1>
+</div>
+<div class="search-wrapper">
+    <input class="form-control" 
+    #searchKeyControl="ngModel" 
+    name="searchKeyControl"
+    [(ngModel)]="searchKey" placeholder="please input the key name or screenshot name to search" autofocus #todoText>
+</div>
+
+<ul>
+  <li *ngFor="let shot of visiableScreenshots" (click)="goToSlideShow(shot)">
+    <<img [src]="getScreenshotPath(shot)" alt="">
+  </li>
+</ul>
+
+<image-slide-modal #imageSlideModal></image-slide-modal>

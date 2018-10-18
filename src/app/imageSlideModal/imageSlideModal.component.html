@@ -1,0 +1,27 @@
+<div bsModal #modal="bs-modal" class="modal fade" tabindex="-1" role="dialog" >
+  <div class="modal-dialog modal-md" *ngIf="showingImage">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{showingImage.fileName}}</h4>
+        <button type="button" class="close pull-right" (click)="onCancelClicked()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <img [src]="getValueScreenshotPath(showingImage)" alt="">
+          <img [src]="getKeyScreenshotPath(showingImage)" alt="" style="float: right">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-with-shadow action-button" (click)="onPreviousClicked()" aria-label="Close" style="float: left">
+          Previous
+        </button>
+        <div class="action-note">
+          You can use arrow keys to navigate as well. 
+        </div>
+        <button type="button" class="btn btn-default btn-with-shadow action-button" (click)="onNextClicked()" aria-label="Close">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
